@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp2.MainPage"
+             Title="My routes">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+
+            <Label
+                Text="Select route"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <ListView x:Name="MyList" Background="LightGray" HeightRequest="550" VerticalScrollBarVisibility="Always" ItemSelected="MyList_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Spacing="20" Padding="5" Orientation="Horizontal" Background="Bisque">
+                                <HorizontalStackLayout HorizontalOptions="Start">
+                                        <Label 
+                                       Text="{Binding Name}"
+                                       FontAttributes="Bold"
+                                       FontSize="23"
+                                            HorizontalOptions="Start"
+                                        TextColor="Black"/>
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout HorizontalOptions="End">
+
+                                    <VerticalStackLayout>
+                                        <Label 
+                                           Text="{Binding  Date}"
+                                           FontSize="16"
+                                           HorizontalOptions="End"
+                                            TextColor="Black"/>
+
+                                        <Label 
+                                            Text="{Binding  Time}"
+                                             HorizontalOptions="End"
+                                            FontSize="16"
+                                             TextColor="Black"/>
+                                    </VerticalStackLayout>
+
+                                </HorizontalStackLayout>
+                                
+
+                            </StackLayout>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
